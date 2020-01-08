@@ -1,0 +1,15 @@
+name: Transparent Proxy Mikrotik
+
+ip>web proxy set enable
+ubah port 4646
+cache on disk centang
+masuk ke access
+add dst-port 80
+action deny klik ok
+
+lakukan transparent proxy 
+masuk ke ip>firewall>nat>chain-dstnat
+protocol=tcp
+dst-port=80
+action=redirect
+to-port=4646/port dari server proxy mikrotik
